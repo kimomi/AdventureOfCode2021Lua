@@ -7,5 +7,6 @@
 ## solution
 
 - update table as told
+- record the same timer fish total num as one elemet instead of every fish as one element
 
-## diffcult  ★☆☆☆☆
+## difficulty  ★★☆☆☆

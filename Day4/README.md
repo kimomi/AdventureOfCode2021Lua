@@ -9,4 +9,4 @@
 - check one board win
 - write for loop check all borad
 
-## diffcult  ★★☆☆☆
+## difficulty  ★★☆☆☆

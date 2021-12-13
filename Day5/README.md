@@ -9,4 +9,4 @@
 - think input as two point of line
 - it's like draw a line rasterization but easier
 
-## diffcult  ★★★☆☆
+## difficulty  ★★★☆☆

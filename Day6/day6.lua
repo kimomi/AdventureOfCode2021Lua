@@ -1,28 +1,30 @@
-local fishTable = {}
+local fishTimerTable = {}
 for line in io.lines("data") do
     for str in string.gmatch(line, '(%d+)') do
-        table.insert(fishTable, tonumber(str))
+        local timer = tonumber(str)
+        fishTimerTable[timer] = (fishTimerTable[timer] or 0) + 1
     end
 end
 
 local maxTimer = 6
 local newTimer = 8
 
-for i = 1, 80 do
+for i = 1, 256 do
     local newFishTable = {}
-    for index in ipairs(fishTable) do
-        fishTable[index] = fishTable[index] - 1
-        newFishTable[index] = fishTable[index]
-    end
-
-    for index in ipairs(fishTable) do
-        if fishTable[index] < 0 then
-            newFishTable[index] = maxTimer
-            table.insert(newFishTable, newTimer)
+    for timer, num in pairs(fishTimerTable) do
+        if (timer - 1 < 0) then
+            newFishTable[maxTimer] = (newFishTable[maxTimer] or 0) + num
+            newFishTable[newTimer] = num
+        else
+            newFishTable[timer - 1] = (newFishTable[timer - 1] or 0) + num
         end
     end
 
-    fishTable = newFishTable
+    fishTimerTable = newFishTable
 end
 
-print(#fishTable)
+local result = 0
+for k, v in pairs(fishTimerTable) do
+    result = result + v
+end
+print(result)

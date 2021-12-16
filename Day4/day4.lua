@@ -69,11 +69,17 @@ local function getEndIndex()
     for index = 1, #markNumTable do
         table.insert(realMarkNumTable, markNumTable[index])
 
+        local nextNumTable = {}
         for _, realNumTable in ipairs(allNumTable) do
-            if tableWin(realNumTable, realMarkNumTable) then
-                return index, realNumTable, realMarkNumTable
+            if not tableWin(realNumTable, realMarkNumTable) then
+                table.insert(nextNumTable, realNumTable)
+            else
+                if #allNumTable == 1 then
+                    return index, allNumTable[1], realMarkNumTable
+                end
             end
         end
+        allNumTable = nextNumTable
     end
 end
 

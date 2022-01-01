@@ -1,6 +1,6 @@
 local io = require 'io'
 
-function solution1()
+local function solution1()
     local x = 0
     local y = 0
     for line in io.lines('data') do
@@ -20,7 +20,7 @@ function solution1()
     print(x * y)
 end
 
-function solution2()
+local function solution2()
     local x = 0
     local y = 0
     local aim = 0

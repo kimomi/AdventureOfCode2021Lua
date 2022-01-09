@@ -1,0 +1,22 @@
+# Day 15
+
+## original question link
+
+<https://adventofcode.com/2021/day/15>
+
+## solution
+
+It's a path finding question, indeed.
+From the start position to end position, and you have many roads, each roads have different length(in this question risk level).
+There are some solution in path finding question.
+In this project, I choose BFS.
+The general idea is that:
+
+1. find all the neighborhood unreached points
+2. get the nearest neighborhood points(P) to the start point, so that's the min distance between strat point and P
+3. after get P, update neighborhood points
+4. when you get end point, that's the answer
+
+There are some other methods like A-star, Dijkstra and so on.
+
+## difficulty  ★★★★★
